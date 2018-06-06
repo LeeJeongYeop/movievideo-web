@@ -14,7 +14,7 @@ import java.util.Date;
  * Created by nayak on 2018. 6. 6..
  */
 @Controller
-@RequestMapping("/movie")
+@RequestMapping("/")
 public class MovieController {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
@@ -22,7 +22,7 @@ public class MovieController {
     @Autowired
     private MovieRepository movieRepository;
 
-    @RequestMapping(path = "/list", method = RequestMethod.GET)
+    @RequestMapping(path = "/", method = RequestMethod.GET)
     public String moveList(Model model) {
         model.addAttribute("movieList", movieRepository.findMovieByCrawlingDate(DATE_FORMAT.format(new Date())));
         return "movie/movie_list";
