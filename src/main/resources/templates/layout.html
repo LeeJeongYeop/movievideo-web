@@ -12,6 +12,18 @@
 </head>
 <body>
 
+<header th:fragment="topbar">
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="/" class="navbar-brand d-flex align-items-center">
+                    <strong>MOVIE VIDEO</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+</header>
+
 <footer th:fragment="commonFooter">
     <script type="text/javascript" th:src="@{/lib/jquery/jquery-3.3.1.min.js}"></script>
     <script type="text/javascript" th:src="@{/lib/popper/popper.js}"></script>
