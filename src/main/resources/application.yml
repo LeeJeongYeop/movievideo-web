@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: local
+
+# local
+---
+spring:
+  profiles: local
+  datasource:
+      url: jdbc:mysql://localhost:3306/movievideo
+      username: root
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: mysql
