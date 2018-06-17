@@ -8,13 +8,14 @@ body {
     background-color: #202124 !important;
 }
 
+/* common */
+.href {
+    cursor: pointer;
+}
+
 /* overwrite card */
 .card {
     box-shadow: none;
-}
-
-/* custom card */
-.card {
     cursor: pointer;
 }
 
@@ -32,5 +33,23 @@ body {
 }
 .video-list-card .text-muted {
     margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* video detail */
+.video-detail h5 {
+    margin-top: 2rem;
+}
+.video-detail-related {
+    height: 7rem;
+}
+.video-detail-related img {
+    float: left;
+    margin-right: 1rem;
+    width: 30%;
+    max-height: 150px;
+}
+.video-detail-related p {
+    font-size: 0.8rem;
     font-style: italic;
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: commonHeader"></head>
+<body>
+<header th:replace="layout :: topbar"></header>
+
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-md-8 video-detail">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" th:src="'https://www.youtube.com/embed/'+${video.videoId}" allowfullscreen></iframe>
+            </div>
+            <h5 th:text="${video.videoTitle}"></h5>
+        </div>
+        <div class="col-md-4">
+            <th:block th:each="relatedVideo: ${relatedVideoList}">
+                <div class="video-detail-related href" th:attr="data-href='/video/detail?videoId='+${relatedVideo.videoId}">
+                    <img th:src="${relatedVideo.videoCoverImageUrl}">
+                    <span th:text="${relatedVideo.videoTitle}"></span>
+                    <p class="text-muted" th:text="'영상등록일: '+${relatedVideo.videoPublishedDate}"></p>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout :: commonFooter"></footer>
+</body>
+</html>
