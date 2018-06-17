@@ -5,18 +5,32 @@ body {
     box-shadow: none;
 }
 .bg-dark {
-    background-color: black !important;
+    background-color: #202124 !important;
 }
 
 /* overwrite card */
 .card {
     box-shadow: none;
 }
-.card-body {
-    padding: 0.5rem 0 1.25rem 0;
-}
 
 /* custom card */
 .card {
     cursor: pointer;
+}
+
+/* movie list */
+.movie-list-card .card-body {
+    padding: 0.5rem 0 1.25rem 0;
+}
+
+/* video list */
+.video-list-card h5 {
+    height: 3rem;
+}
+.video-list-card .card-text {
+    margin: 0.5rem 0 0.5rem 0;
+}
+.video-list-card .text-muted {
+    margin-top: 0.5rem;
+    font-style: italic;
 }

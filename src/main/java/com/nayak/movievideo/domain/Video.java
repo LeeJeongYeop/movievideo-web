@@ -23,6 +23,17 @@ public class Video {
     @Column
     private String videoPublishedDate;
 
+    public Video() {}
+
+    public Video(String movieTitle, String videoId, String videoTitle, String videoDescription, String videoCoverImageUrl, String videoPublishedDate) {
+        this.movieTitle = movieTitle;
+        this.videoId = videoId;
+        this.videoTitle = videoTitle;
+        this.videoDescription = videoDescription;
+        this.videoCoverImageUrl = videoCoverImageUrl;
+        this.videoPublishedDate = videoPublishedDate;
+    }
+
     public long getId() {
         return id;
     }
