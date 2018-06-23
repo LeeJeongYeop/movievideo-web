@@ -25,11 +25,13 @@ body {
 }
 
 /* video list */
-.video-list-card h5 {
-    height: 3rem;
+.video-list-card {
+    max-height: 400px;
 }
-.video-list-card .card-text {
-    margin: 0.5rem 0 0.5rem 0;
+.video-list-card h5 {
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-top: 0.5rem;
 }
 .video-list-card .text-muted {
     margin-top: 0.5rem;
