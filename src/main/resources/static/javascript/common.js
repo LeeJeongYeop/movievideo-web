@@ -5,6 +5,12 @@ $(document).ready(function () {
         $(this).children(".card-img-top").css("box-shadow", "none");
     });
 
+    $(".video-list-card").hover(function() {
+        $(this).children(".card-body").children().css("text-decoration", "underline")
+    }, function() {
+        $(this).children(".card-body").children().css("text-decoration", "none")
+    });
+
     $(".href").on("click", function() {
         window.location.href = $(this).data("href").toString();
     });

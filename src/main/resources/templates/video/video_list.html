@@ -9,11 +9,12 @@
 <div class="container py-5">
     <div class="row">
         <th:block th:each="video: ${videoList}">
-            <div class="col-md-6">
-                <div class="card flex-md-row mb-4 video-list-card href">
+            <div class="col-md-4">
+                <div class="card flex-md-row mb-4 video-list-card href"
+                     th:attr="data-href='/video/detail?videoId='+${video.videoId}">
                     <div class="card-body d-flex flex-column">
-                        <h5 th:text="${video.videoTitle}"></h5>
                         <img class="card-img-top flex-auto" th:src="${video.videoCoverImageUrl}">
+                        <h5 th:text="${video.videoTitle}"></h5>
                         <p class="card-text mb-auto" th:text="${video.videoDescription}"></p>
                         <div class="mb-1 text-muted" th:text="'영상등록일: '+${video.videoPublishedDate}"></div>
                     </div>
