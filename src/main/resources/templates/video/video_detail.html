@@ -14,7 +14,7 @@
             </div>
             <h5 th:text="${video.videoTitle}"></h5>
             <p class="property">
-                원본 Youtube - <a th:href="'https://www.youtube.com/watch?v=dwptKXM6tSk'+${video.videoId}" th:text="'https://www.youtube.com/watch?v=dwptKXM6tSk'+${video.videoId}"></a>
+                원본 Youtube - <a th:href="'https://www.youtube.com/watch?v='+${video.videoId}" th:text="'https://www.youtube.com/watch?v='+${video.videoId}"></a>
             </p>
             <p class="text-muted" th:text="'영상등록일: '+${video.videoPublishedDate}"></p>
         </div>
