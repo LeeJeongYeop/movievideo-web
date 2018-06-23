@@ -1,6 +1,7 @@
 package com.nayak.movievideo.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by nayak on 2018. 6. 3..
@@ -10,12 +11,15 @@ public class Movie {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    @Column
+    @Column(name = "movie_title")
     private String movieTitle;
     @Column
     private String posterImageUrl;
     @Column
     private String crawlingDate;
+
+    @OneToMany(targetEntity = Video.class, mappedBy = "movieTitle", fetch = FetchType.EAGER)
+    private List<Video> videoList;
 
     public Movie() {}
 
@@ -53,6 +57,15 @@ public class Movie {
         this.crawlingDate = crawlingDate;
     }
 
+    public List<Video> getVideoList() {
+        return videoList;
+    }
+
+    public void setVideoList(List<Video> videoList) {
+        this.videoList = videoList;
+    }
+
+
     @Override
     public String toString() {
         return "Movie{" +
@@ -60,6 +73,7 @@ public class Movie {
                 ", movieTitle='" + movieTitle + '\'' +
                 ", posterImageUrl='" + posterImageUrl + '\'' +
                 ", crawlingDate='" + crawlingDate + '\'' +
+                ", videoList=" + videoList +
                 '}';
     }
 }

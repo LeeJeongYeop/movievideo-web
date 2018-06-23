@@ -1,6 +1,8 @@
 package com.nayak.movievideo.web.controller;
 
+import com.nayak.movievideo.domain.Movie;
 import com.nayak.movievideo.domain.MovieRepository;
+import com.nayak.movievideo.domain.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by nayak on 2018. 6. 6..
@@ -22,9 +25,14 @@ public class MovieController {
     @Autowired
     private MovieRepository movieRepository;
 
+    @Autowired
+    private VideoRepository videoRepository;
+
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String moveList(Model model) {
-        model.addAttribute("movieList", movieRepository.findMovieByCrawlingDate(DATE_FORMAT.format(new Date())));
+        List<Movie> movieList = movieRepository.findMovieByCrawlingDate(DATE_FORMAT.format(new Date()));
+        movieList.forEach(movie -> movie.setVideoList(videoRepository.findVideoByMovieTitle(movie.getMovieTitle())));
+        model.addAttribute("movieList", movieList);
         return "movie/movie_list";
     }
 }
