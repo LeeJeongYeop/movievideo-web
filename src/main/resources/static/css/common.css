@@ -40,7 +40,14 @@ body {
 
 /* video detail */
 .video-detail h5 {
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+.video-detail .property {
+    font-size: 0.8rem;
+}
+.video-detail .text-muted {
+    font-size: 0.8rem;
+    font-style: italic;
 }
 .video-detail-related {
     height: 7rem;
