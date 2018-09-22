@@ -18,8 +18,12 @@ import java.util.stream.Collectors;
 @RequestMapping("/video")
 public class VideoController {
 
+    private final VideoRepository videoRepository;
+
     @Autowired
-    private VideoRepository videoRepository;
+    public VideoController(VideoRepository videoRepository) {
+        this.videoRepository = videoRepository;
+    }
 
     @RequestMapping(path = "/list", method = RequestMethod.GET)
     public String videoList(@RequestParam String movieTitle, Model model) {
