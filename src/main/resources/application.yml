@@ -6,6 +6,15 @@ spring:
 ---
 spring:
   profiles: local
+  # devtools setting
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+  # database
   datasource:
       url: jdbc:mysql://localhost:3306/movievideo
       username: root
