@@ -22,11 +22,15 @@ public class MovieController {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
-    @Autowired
-    private MovieRepository movieRepository;
+    private final MovieRepository movieRepository;
+
+    private final VideoRepository videoRepository;
 
     @Autowired
-    private VideoRepository videoRepository;
+    public MovieController(MovieRepository movieRepository, VideoRepository videoRepository) {
+        this.movieRepository = movieRepository;
+        this.videoRepository = videoRepository;
+    }
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String moveList(Model model) {

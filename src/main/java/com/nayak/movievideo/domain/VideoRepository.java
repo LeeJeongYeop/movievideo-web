@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * Created by nayak on 2018. 6. 6..
  */
-@Repository
 public interface VideoRepository extends JpaRepository<Video, Long> {
     List<Video> findVideoByMovieTitle(String movieTitle);
     Video findVideoByVideoId(String videoId);
