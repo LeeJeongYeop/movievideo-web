@@ -15,3 +15,16 @@ $(document).ready(function () {
         window.location.href = $(this).data("href").toString();
     });
 });
+
+/**
+ * Sign In / Up
+ */
+function signPageMove(target) {
+  var location = window.location;
+  if (target === 'sign-up') {
+    return location.href = '/user/sign-up'
+  }
+  if (target === 'sign-in') {
+    return location.href = '/user/sign-in'
+  }
+}

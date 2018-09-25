@@ -7,14 +7,61 @@ body {
 .bg-dark {
     background-color: #202124 !important;
 }
+.bg-cadetblue {
+    background-color: cadetblue;
+    color: white;
+}
+.bg-cadetblue:hover {
+    background-color: #88c9cc;
+    color: white;
+}
 
 /* common */
 .href {
     cursor: pointer;
 }
+.form-control:focus {
+    box-shadow: none;
+}
 
-/* overwrite card */
-.card {
+/* sign in / up */
+.sign-form {
+    font-size: 1.3rem;
+}
+.sign-form .btn {
+    text-transform: none;
+}
+.sign-form form {
+    padding: 1.5rem;
+}
+.sign-form .form-group {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.sign-form .card-header {
+    text-align: center;
+    color: white;
+    padding: 0.5rem;
+}
+.sign-form .card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.sign-form-button-group {
+    margin-top: 4rem;
+}
+.sign-form-title {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #636363;
+    font-weight: bolder;
+    line-height: 1.1;
+    text-align:center;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+
+/* custom card */
+.custom-card .card {
     box-shadow: none;
     cursor: pointer;
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: commonHeader"></head>
+<body>
+
+<div class="sign-form-title">
+    <h1>Movie Video</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <div class="card sign-form">
+                <div class="card-header bg-dark">Sign-In</div>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user_id" placeholder="ID">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user_nickname" placeholder="Nick Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="user_password" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="user_password_confirm" placeholder="Reenter Password">
+                    </div>
+
+                    <div class="sign-form-button-group">
+                        <button type="button" class="btn btn-block bg-cadetblue">Sign Up</button>
+                        <button type="button" class="btn btn-dark btn-block" onclick="signPageMove('sign-in');">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout :: commonFooter"></footer>
+</body>
+</html>

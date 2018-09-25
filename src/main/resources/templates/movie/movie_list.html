@@ -10,13 +10,15 @@
     <div class="row">
         <th:block th:each="movie: ${movieList}">
             <div class="col-md-3">
-                <div class="card mb-3 movie-list-card href"
-                     th:attr="data-href='/video/list?movieTitle='+${movie.movieTitle}">
-                    <img class="card-img-top" th:src="${movie.posterImageUrl}">
-                    <div class="card-body">
-                        <p class="card-text text-truncate" th:text="${movie.movieTitle}"></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted" th:text="'video - '+${#lists.size(movie.videoList)}"></small>
+                <div class="custom-card">
+                    <div class="card mb-3 movie-list-card href"
+                         th:attr="data-href='/video/list?movieTitle='+${movie.movieTitle}">
+                        <img class="card-img-top" th:src="${movie.posterImageUrl}">
+                        <div class="card-body">
+                            <p class="card-text text-truncate" th:text="${movie.movieTitle}"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted" th:text="'video - '+${#lists.size(movie.videoList)}"></small>
+                            </div>
                         </div>
                     </div>
                 </div>
