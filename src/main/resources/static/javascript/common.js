@@ -22,9 +22,9 @@ $(document).ready(function () {
 function signPageMove(target) {
   var location = window.location;
   if (target === 'sign-up') {
-    return location.href = '/user/sign-up'
+    return location.href = '/user/sign-up';
   }
   if (target === 'sign-in') {
-    return location.href = '/user/sign-in'
+    return location.href = '/user/sign-in';
   }
 }
