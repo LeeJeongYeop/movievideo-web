@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: commonHeader"></head>
+<body>
+
+<div class="sign-form-title">
+    <h1>Movie Video</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <div class="card sign-form">
+                <div class="card-header bg-dark">Sign-In</div>
+                <form id="sign_up_form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user_id" placeholder="ID">
+                        <div class="invalid-feedback" id="user_id_invalid">
+                            Please enter your ID.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user_nickname" placeholder="Nick Name">
+                        <div class="invalid-feedback" id="user_nickname_invalid">
+                            Please enter your nickname.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="user_password" placeholder="Password">
+                        <div class="invalid-feedback" id="user_password_invalid">
+                            Please enter your password.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="user_password_confirm" placeholder="Confirm Password">
+                        <div class="invalid-feedback" id="user_password_confirm_invalid">
+                            Passwords do not match.
+                        </div>
+                    </div>
+
+                    <div class="sign-form-button-group">
+                        <button type="submit" class="btn btn-block bg-cadetblue" id="sign_up_btn">Sign Up</button>
+                        <button type="button" class="btn btn-dark btn-block" onclick="signPageMove('sign-in');">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout :: commonFooter"></footer>
+</body>
+</html>
