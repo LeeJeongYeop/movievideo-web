@@ -44,7 +44,34 @@ $(document).ready(function () {
         error: function () {
           alert("다시 시도해주세요.");
         }
-      })
+      });
+    }
+  });
+
+  $('#sign_in_password_not_match').show();
+  $('#sign_in_form').on('submit', function (event) {
+    event.preventDefault();
+
+    var signInObject = signInValidation($(this));
+    if (Object.keys(signInObject).length === 2) {
+      $.ajax({
+        url: '/user/validation?userId=' + signInObject.userId,
+        beforeSend: function (xhr, settings) {
+          var token = $("meta[name='_csrf']").attr("content");
+          var header = $("meta[name='_csrf_header']").attr("content");
+          xhr.setRequestHeader(header, token);
+        },
+        success: function(response) {
+          if (response['status'] === 'fail') {
+            $("#sign_in_id_not_registered").show();
+            return false;
+          }
+          event.currentTarget.submit();
+        },
+        error: function () {
+          alert("다시 시도해주세요.");
+        }
+      });
     }
   });
 });
@@ -94,6 +121,27 @@ function signUpValidation($this) {
     formObject.userPasswordConfirm = $this.find('#user_password_confirm').val();
   } else {
     $('#user_password_confirm_invalid').show();
+  }
+
+  return formObject;
+}
+
+function signInValidation($this) {
+  var formObject = {};
+
+  // invalid init
+  $(".invalid-feedback").hide();
+
+  if ($this.find('#user_id').val() !== '') {
+    formObject.userId = $this.find('#user_id').val();
+  } else {
+    $('#sign_in_id_invalid').show();
+  }
+
+  if ($this.find('#user_password').val() !== '') {
+    formObject.userPassword = $this.find('#user_password').val();
+  } else {
+    $('#sign_in_password_invalid').show();
   }
 
   return formObject;

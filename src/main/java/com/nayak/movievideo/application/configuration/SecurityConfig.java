@@ -1,5 +1,7 @@
 package com.nayak.movievideo.application.configuration;
 
+import com.nayak.movievideo.application.handler.SignInFailureHandler;
+import com.nayak.movievideo.application.handler.SingInSuccessHandler;
 import com.nayak.movievideo.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,16 +23,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/javascript/**", "/css/**", "/lib/**", "/").permitAll()
+                .antMatchers("/javascript/**", "/css/**", "/lib/**").permitAll()
                 .antMatchers("/user/sign-in", "/user/sign-up").permitAll();
 
         http.formLogin()
                 .loginPage("/user/sign-in")
                 .loginProcessingUrl("/user/sign-in")
-                .failureForwardUrl("/user/sign-in")
                 .usernameParameter("userId")
                 .passwordParameter("userPassword")
-                .defaultSuccessUrl("/", true);
+                .failureHandler(new SignInFailureHandler())
+                .successHandler(new SingInSuccessHandler("/"));
 
         http.logout()
                 .logoutSuccessUrl("/");

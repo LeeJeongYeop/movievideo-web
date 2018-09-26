@@ -48,6 +48,10 @@ public class AjaxResponse {
             return new AjaxResponseBuilder(status);
         }
 
+        public static AjaxResponseBuilder create(Boolean status) {
+            return new AjaxResponseBuilder(status ? AjaxResponseCode.SUCCESS : AjaxResponseCode.FAIL);
+        }
+
         public AjaxResponseBuilder setMessage(String message) {
             this.message = message;
             return this;
