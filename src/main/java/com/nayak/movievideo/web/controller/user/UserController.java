@@ -5,10 +5,9 @@ import com.nayak.movievideo.service.user.UserService;
 import com.nayak.movievideo.utils.AjaxResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by nayak on 25/09/2018.
@@ -44,8 +43,15 @@ public class UserController {
                 .build();
     }
 
-    @RequestMapping(path = "/sign-in", method = RequestMethod.GET)
-    public String signIn() {
+    @RequestMapping(path = "/sign-in")
+    public String signIn(HttpServletRequest request) {
+        request.getSession().setAttribute("prevPage", request.getHeader("Referer"));
         return "user/sign_in";
+    }
+
+    @RequestMapping(path = "/validation", method = RequestMethod.GET)
+    @ResponseBody
+    public AjaxResponse userIdValidation(@RequestParam String userId) {
+        return AjaxResponse.AjaxResponseBuilder.create(userService.isAlreadyUserId(userId)).build();
     }
 }
