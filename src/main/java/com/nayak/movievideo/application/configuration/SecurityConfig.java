@@ -2,7 +2,7 @@ package com.nayak.movievideo.application.configuration;
 
 import com.nayak.movievideo.application.handler.SignInFailureHandler;
 import com.nayak.movievideo.application.handler.SingInSuccessHandler;
-import com.nayak.movievideo.service.user.UserService;
+import com.nayak.movievideo.web.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

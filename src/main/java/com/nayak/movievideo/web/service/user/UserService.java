@@ -1,4 +1,4 @@
-package com.nayak.movievideo.service.user;
+package com.nayak.movievideo.web.service.user;
 
 import com.nayak.movievideo.application.constant.UserConstant;
 import com.nayak.movievideo.domain.user.User;
