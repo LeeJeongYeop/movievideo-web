@@ -5,5 +5,5 @@ package com.nayak.movievideo.application.constant;
  */
 public class UserConstant {
     public static final Integer ABLE = 1;
-    public static final Integer DISABLE = 1;
+    public static final Integer DISABLE = 0;
 }
