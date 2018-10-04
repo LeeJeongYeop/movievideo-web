@@ -6,4 +6,6 @@ package com.nayak.movievideo.application.constant;
 public class UserConstant {
     public static final Integer ABLE = 1;
     public static final Integer DISABLE = 0;
+
+    public static final String UNAUTHENTICATION_USER = "anonymousUser";
 }
