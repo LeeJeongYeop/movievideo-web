@@ -16,7 +16,7 @@ spring:
     cache: false
   # database
   datasource:
-      url: jdbc:mysql://localhost:3306/movievideo
+      url: jdbc:mysql://docker.for.mac.localhost:3306/movievideo
       username: root
       password:
   jpa:
@@ -24,3 +24,8 @@ spring:
       ddl-auto: none
     database: mysql
     show-sql: true
+
+logging:
+  file: logs/app_log.log
+  level:
+    root: info
